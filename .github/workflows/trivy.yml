@@ -61,12 +61,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Pull image Node.js
-        run: docker pull node:latest
+        run: docker pull node:alpine
 
       - name: Run Trivy scan
         uses: aquasecurity/trivy-action@0.35.0
         with:
-          image-ref: node:latest
+          image-ref: node:alpine
           severity: HIGH,CRITICAL
           ignore-unfixed: true
           exit-code: 0
